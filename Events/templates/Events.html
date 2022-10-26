@@ -1,0 +1,24 @@
+{% extends "base.html" %} {% block abdullah %} {% for event in events %}
+<div class="row gap-2 justify-content-center">
+  <div
+    class="card col-md-5 col-sm-12 p-3 d-flex justify-content-center align-items-center"
+  >
+    <img
+      src="{{ event.image.url }}"
+      alt=""
+      class="rounded-circle m-2"
+      style="width: 80px; height: 80px"
+    />
+    <h4 class="m-2"><strong>Event: {{event.name}}</strong></h4>
+    <!-- <h1>{{event.image.url}}</h1> -->
+    <h1>Organiser: {{event.organiser}}</h1>
+    <h1>Number of seats available: {{event.numberOfSeats}}</h1>
+    <h1>Event date: {{event.dateOfEvent}}</h1>
+    <button type="button" class="btn btn-dark m-2">
+      <a href="{{event.id}}">Book here</a>
+    </button>
+  </div>
+</div>
+{% endfor %} {% endblock %}
+
+
